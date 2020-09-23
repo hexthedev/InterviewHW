@@ -1,10 +1,11 @@
-# run from command line, starts a development server used to test the api
-# run as `python devServer.py`, automatically attempts to create server at localhost:5000
-#
-# if for some reason then ip is in use, the following command can be run
-# `python devServer.py ip port` will use provided ip and port. 
-# Will fail if ip or port are invalid 
+"""
+run from command line, starts a development server used to test the api
+run as `python devServer.py`, automatically attempts to create server at localhost:5000
 
+if for some reason then ip is in use, the following command can be run
+`python devServer.py ip port` will use provided ip and port. 
+Will fail if ip or port are invalid 
+"""
 import api.dadaApi as api
 import sys
 
