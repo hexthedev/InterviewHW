@@ -4,7 +4,7 @@ import requests
 args = sys.argv
 lenargs = len(args)
 
-# load the config json and detemrine host
+# load the config json and determine host
 defaultServerIp = "localhost" 
 defaultServerPort = "5000" 
 
