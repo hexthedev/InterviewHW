@@ -9,6 +9,40 @@ import api.dadaApi as api
 import sys
 import requests
 
+def requestWithoutJsonTest(url):
+  res = requests.post(url = url)
+  print(res)
+
+def requestBadJsonTest(url):
+  res = requests.post(url = url, json = {"bad" : "bad"})
+  print(res)
+
+def requestBadDateTest(url):
+  res = requests.post(url = url, json = {
+    "submitDate": "28/10/1992",
+    "purchaseDate": "2010/10/28",
+    "odometer": 10,
+    "isOverhauled": True
+  })
+  print(res)
+
+  res = requests.post(url = url, json = {
+    "submitDate": "2010/10/28",
+    "purchaseDate": "28/10/1992",
+    "odometer": 10,
+    "isOverhauled": True
+  })
+  print(res)
+
+  res = requests.post(url = url, json = {
+    "submitDate": "2010/10/28",
+    "purchaseDate": "2010/10/28",
+    "odometer": 10,
+    "isOverhauled": True
+  })
+  print(res)
+
+
 def runTests():
   args = sys.argv
   lenargs = len(args)
@@ -20,9 +54,12 @@ def runTests():
   serverIp = defaultServerIp if lenargs < 3 else args[1]
   serverPort = defaultServerPort if lenargs < 3 else args[2]
 
-  url = f"http://{serverIp}:{serverPort}/companies"
-  res = requests.get(url = url)
-  print(res.json())
+  url = f"http://{serverIp}:{serverPort}/vehicleStatus/query"
+  
+  requestWithoutJsonTest(url)
+  requestBadJsonTest(url)
+  requestBadDateTest(url)
 
 if(__name__ == "__main__"):
   runTests()
+
