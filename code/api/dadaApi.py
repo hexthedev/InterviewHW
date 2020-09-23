@@ -94,10 +94,7 @@ def checkShouldDistanceMaintenance(odometer):
 def checkShouldTimeMaintenance(purchaseDate, submitDate, isOverhauled): 
   """
   Tests if conditions are met such that time maintenance is required. This is every 6 months for 12 months for cars < 3 years, 6 months for cars over or >= 3 year, or 3 months for overhauled cars
-  """
-  print(submitDate.year)
-  print(purchaseDate.year)
-  
+  """  
   purchaseSubmitYearDelta = submitDate.year - purchaseDate.year
   
   if isOverhauled:
@@ -110,12 +107,6 @@ def checkShouldTimeMaintenance(purchaseDate, submitDate, isOverhauled):
   yearMonthOffset = submitDate.month - purchaseDate.month
   purchaseSubmitMonthDelta = purchaseSubmitYearDelta * 12 + yearMonthOffset
   monthCycleMod = purchaseSubmitMonthDelta % timeMainThreshold
-
-  print(purchaseSubmitYearDelta)
-  print(timeMainThreshold)
-  print(yearMonthOffset)
-  print(purchaseSubmitMonthDelta)
-  print(monthCycleMod)
 
   if yearMonthOffset == 0 and purchaseSubmitYearDelta == 0:
       return False
