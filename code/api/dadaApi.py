@@ -86,6 +86,9 @@ def checkShouldDistanceMaintenance(odometer):
   """
   kmsSinceMaintainence = odometer % kmsPerDistMaintainence
   
+  if kmsSinceMaintainence == 0 and odometer > 0:
+    return True
+
   if kmsPerDistMaintainence - kmsSinceMaintainence <= distMaintenanceNotifyThreshold:
     return True
 
