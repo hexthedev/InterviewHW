@@ -10,8 +10,8 @@ This project contains a RESTApi endpoint implementation written using the Flask 
 A development server can be run locally by running `python code/devServer.py <ip> <port>` from the project root. `python code/devServer.py` will create a server with default ip:port `localhost:5000`
 
 To run unit tests:
-1 - Start a dev server on `localhost:5000`
-2 - Run `pytest -v` to run unit tests in verbose mode
+1- Start a dev server on `localhost:5000`
+2- Run `pytest -v` to run unit tests in verbose mode
 
 The api implementation can be found at `code/api/dadaApi.py`
 
