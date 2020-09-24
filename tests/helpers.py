@@ -1,20 +1,9 @@
-import requests
-import sys
-
 """
 Helper functions used by tests
 """
-args = sys.argv
-lenargs = len(args)
+import requests
 
-# load the config json and determine host
-defaultServerIp = "localhost" 
-defaultServerPort = "5000" 
-
-serverIp = defaultServerIp if lenargs < 3 else args[1]
-serverPort = defaultServerPort if lenargs < 3 else args[2]
-
-url = f"http://{serverIp}:{serverPort}/vehicleStatus/query"
+url = "http://localhost:5000/vehicleStatus/query"
 
 def constructAndSendRequest(url, submitDate, purchaseDate, odometer, isOverhauled):
   return requests.post(url = url, json = {
