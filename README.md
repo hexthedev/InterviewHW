@@ -23,7 +23,7 @@ Each service has it's own requirements when it comes to deployment. But the most
 This would allow for CI/CD integration whenever changes were pushed to the `master` branch. It's could be automated through GitHub Actions, or another DevOps alternative. 
 
 ## Notes and Future Improvements
-* I don't like that the dev server needs starting to run unit tests. I would rather run unit tests automatically start and stop the application per test, as a test fixture. In this case, since the application is stateless, it isn't a problem though. 
+* I don't like that the dev server needs starting to run unit tests. I would rather run unit tests automatically. I.E. start and stop the application per test, as a test fixture. In this case, since the application is stateless, it isn't a problem though. 
 
 * I don't like that unit tests are locked to an ip. I would try to find a solution to this using a configuration json file used by unit test requests and the tested application. 
 
