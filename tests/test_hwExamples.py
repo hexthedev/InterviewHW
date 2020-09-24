@@ -43,7 +43,7 @@ def test_example_7():
 def test_example_8():
   res = constructAndSendRequest(url, "2030/09/01", "2027/07/10", 15000, True)
   assert res.status_code == 200
-  assert checkJsonOutput(res.json())
+  assert checkJsonOutput(res.json(), isScrapped=True)
 
 def test_example_9():
   res = constructAndSendRequest(url, "2030/09/01", "2024/10/22", 90300, False)
